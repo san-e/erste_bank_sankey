@@ -5,7 +5,7 @@ Generiert Sankey-Diagramme aus monatlichen George-Kontoauszügen im JSON-Format.
 ```bash
 git clone https://github.com/san-e/erste_bank_sankey
 cd erste_bank_sankey
-uv init
+uv sync
 ```
 
 ## Benutzung
@@ -14,3 +14,4 @@ uv init
    uv run main.py
    ```
 3. Die generierten .svg Dateien werden im Ordner `sankeys` abgelegt.
+
