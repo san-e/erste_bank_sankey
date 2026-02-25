@@ -55,7 +55,7 @@ def generate_and_save(data):
             for wert in ausgänge[name]:
                 if wert in amount:
                     to_remove.append(wert)
-                    flat = True
+                    flag = True
             for wert in to_remove:
                 ausgänge[name].pop(ausgänge[name].index(wert))
 
@@ -65,13 +65,19 @@ def generate_and_save(data):
         flow = (name, "Einkommen", sum(amount))
         flows.append(flow)
 
+    a = list()
+
     for name, amount in ausgänge.items():
         for regex, group in groups.items():
             if regex.findall(name):
                 name = group
                 break
         flow = ("Einkommen", name, sum(amount))
-        flows.append(flow)
+        a.append(flow)
+    a.sort(key=lambda x: x[1])
+
+    for entry in a:
+        flows.append(entry)
 
     flows.append(("Einkommen", "Ersparnis", einkommen - ausgaben))
 
