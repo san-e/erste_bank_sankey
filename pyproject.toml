@@ -1,7 +1,7 @@
 [project]
-name = "sankey-konto"
+name = "erste_bank_sankey"
 version = "0.1.0"
-description = "Add your description here"
+description = "Generiert Sankey-Diagramme aus monatlichen George-Kontoauszügen"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
